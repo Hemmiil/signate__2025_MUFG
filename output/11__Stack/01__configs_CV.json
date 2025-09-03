@@ -1,0 +1,311 @@
+{
+  "base_models": [
+    {
+      "model_name": "MLP_Emb",
+      "model_id": "MLP_PyT_emb",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+        "epochs": 50,
+        "batch_size": 256,
+        "cat_dims": [24],
+        "emb_dims": [5],
+        "hidden_dim": [64, 64],
+        "dropout": 0.1,
+        "lr": 1e-3,
+        "patience": 3,
+        "verbose": false,
+        "is_conv_emb": false,
+        "is_conv_log": false
+      }
+    },
+    {
+      "model_name": "KNC",
+      "model_id": "k-Neighbors_Classifier",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+        "n_neighbors": 141,
+        "n_jobs": 1,
+        "metric": "minkowski",
+        "weights": "uniform",
+        "algorithm": "auto"
+      }
+    },
+    {
+      "model_name": "XGBoost",
+      "model_id": "XGBoost",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "subsample": 1.0,
+        "reg_lambda": 10,
+        "objective": "binary:logistic"
+      }
+    },
+    {
+      "model_name": "LightGBM",
+      "model_id": "LightGBM_GBDT",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "num_leaves": 10,
+        "boosting_type": "gbdt",
+        "min_child_samples": 90,
+        "reg_alpha": 10,
+        "data_sample_strategy": "bagging"
+      }
+    },
+    {
+      "model_name": "LightGBM",
+      "model_id": "LightGBM_DART",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "num_leaves": 32,
+        "boosting_type": "dart",
+        "reg_alpha": 10,
+        "reg_lambda": 0,
+        "max_depth": 10,
+        "drop_seed": 42
+      }
+    },
+    {
+      "model_name": "MLP_PyT",
+      "model_id": "MLP_PyT_simple",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+        "ModelArch": "simple",
+        "epochs": 50,
+        "batch_size": 256,
+        "hidden_dim": [32, 32, 32],
+        "dropout": 0.1,
+        "lr": 1e-3,
+        "patience": 3,
+        "verbose": false,
+        "is_conv_log": false,
+        "is_conv_emb": false
+      }
+    },
+    {
+      "model_name": "CatBoost",
+      "model_id": "CatBoost",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+          "n_estimators": 200,
+          "scale_pos_weight": 2,
+          "boosting_type": "Plain",
+          "max_depth": 4,
+          "eta": 0.1,
+          "reg_lambda": 1,
+          "random_state": 42
+        }
+    },
+    {
+      "model_name": "RealMLP",
+      "model_id": "RealMLP",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+          "device":"cpu",
+          "random_state": 0,
+          "n_cv": 1,
+          "n_refit": 0,
+          "n_epochs": 20,
+          "batch_size": 256,
+          "hidden_sizes": [125, 125],
+          "val_metric_name": "cross_entropy",
+          "use_ls": true,
+          "lr": 0.04,
+          "verbosity": 0,
+          "is_conv_log": false,
+          "is_conv_emb": false
+      }
+    },
+    {
+      "model_name": "FeatEns",
+      "model_id": "FeatEns",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "m_models": 200,
+        "k_features_min": 10,
+        "k_features_max": 200,
+        "metric": "f1",
+        "random_state": 42,
+        "test_size": 0.2,
+        "threshold": 0.5,
+        "metrics_power": 0.5,
+        "base_params": {
+            "penalty": "l2",
+            "C": 10,
+            "solver": "lbfgs",
+            "class_weight": "balanced"
+        }
+      }
+    }
+  ],
+  "meta_model": [
+    {
+      "model_name": "MLP_Emb",
+      "model_id": "MLP_PyT_emb",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+        "epochs": 50,
+        "batch_size": 256,
+        "cat_dims": [24],
+        "emb_dims": [5],
+        "hidden_dim": [64, 64],
+        "dropout": 0.1,
+        "lr": 1e-3,
+        "patience": 3,
+        "verbose": false,
+        "is_conv_emb": false,
+        "is_conv_log": false
+      }
+    },
+    {
+      "model_name": "KNC",
+      "model_id": "k-Neighbors_Classifier",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+        "n_neighbors": 141,
+        "n_jobs": 1,
+        "metric": "minkowski",
+        "weights": "uniform",
+        "algorithm": "auto"
+      }
+    },
+    {
+      "model_name": "XGBoost",
+      "model_id": "XGBoost",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "subsample": 1.0,
+        "reg_lambda": 10,
+        "objective": "binary:logistic"
+      }
+    },
+    {
+      "model_name": "LightGBM",
+      "model_id": "LightGBM_GBDT",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "num_leaves": 10,
+        "boosting_type": "gbdt",
+        "min_child_samples": 90,
+        "reg_alpha": 10,
+        "data_sample_strategy": "bagging"
+      }
+    },
+    {
+      "model_name": "LightGBM",
+      "model_id": "LightGBM_DART",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "num_leaves": 32,
+        "boosting_type": "dart",
+        "reg_alpha": 10,
+        "reg_lambda": 0,
+        "max_depth": 10,
+        "drop_seed": 42
+      }
+    },
+    {
+      "model_name": "MLP_PyT",
+      "model_id": "MLP_PyT_simple",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+        "ModelArch": "simple",
+        "epochs": 50,
+        "batch_size": 256,
+        "hidden_dim": [32, 32, 32],
+        "dropout": 0.1,
+        "lr": 1e-3,
+        "patience": 3,
+        "verbose": false,
+        "is_conv_log": false,
+        "is_conv_emb": false
+      }
+    },
+    {
+      "model_name": "CatBoost",
+      "model_id": "CatBoost",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters":{
+          "n_estimators": 200,
+          "scale_pos_weight": 2,
+          "boosting_type": "Plain",
+          "max_depth": 4,
+          "eta": 0.1,
+          "reg_lambda": 1,
+          "random_state": 42
+        }
+    },
+    {
+      "model_name": "RealMLP",
+      "model_id": "RealMLP",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+          "device":"cpu",
+          "random_state": 0,
+          "n_cv": 1,
+          "n_refit": 0,
+          "n_epochs": 20,
+          "batch_size": 256,
+          "hidden_sizes": [125, 125],
+          "val_metric_name": "cross_entropy",
+          "use_ls": true,
+          "lr": 0.04,
+          "verbosity": 0,
+          "is_conv_log": false,
+          "is_conv_emb": false
+      }
+    },
+    {
+      "model_name": "FeatEns",
+      "model_id": "FeatEns",
+      "get_importance": false,
+      "is_feats_select": false,
+      "hyperparameters": {
+        "m_models": 200,
+        "k_features_min": 10,
+        "k_features_max": 200,
+        "metric": "f1",
+        "random_state": 42,
+        "test_size": 0.2,
+        "threshold": 0.5,
+        "metrics_power": 0.5,
+        "base_params": {
+            "penalty": "l2",
+            "C": 10,
+            "solver": "lbfgs",
+            "class_weight": "balanced"
+        }
+      }
+    }
+  ],
+  "handle_imbalance": true,
+  "weight_method": "naive",
+  "is_PseudoLabeling": true
+}
