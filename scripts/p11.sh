@@ -1,0 +1,1 @@
+python3 scripts/xp11__SelfLearn.py

@@ -1,0 +1,12 @@
+*.DS_Store
+*.csv
+*.ipynb
+*.json
+*.npy
+*.png
+py
+*.pyc
+sh
+*.tfevents
+*.tsv
+*.txt
