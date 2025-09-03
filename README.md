@@ -19,11 +19,16 @@
     - ニューラルネット系
       - sklearn.MLP, PyTorch, RealMLP
         - PyTorch ではEmbedding層を実装し、カテゴリカル変数の効果的利用を試みた
+        - RealMLPは[こちらを参照](https://zenn.dev/mkj/articles/f7939cb221da14)
     - その他
       - ロジスティックモデル＋特徴量サブサンプリング
       - k近傍法
 - モデルアンサンブル
   - OOF予測値を利用したスタッキング
+
+    <img src="knowledge/00__images/image-stacking.jpg">
+
+    - 参照: https://www.kaggle.com/discussions/getting-started/18153
     - trainデータとtestデータを想定
     - k-fold でtrainデータをt-train, t-val に分割（１＜t＜k）
     - t-trainでモデル（**ベースモデル**）の学習
